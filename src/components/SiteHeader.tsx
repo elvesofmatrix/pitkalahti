@@ -201,7 +201,7 @@ export function SiteHeader({ locale, pageKey }: SiteHeaderProps) {
             width={400}
             height={216}
             priority
-            className="absolute left-0 top-1/2 w-[7.75rem] -translate-y-1/2 object-contain transition-[opacity,transform] duration-300 motion-reduce:transition-none sm:w-[9.25rem] lg:w-[10.5rem]"
+            className="absolute left-0 top-1/2 w-[7.75rem] origin-left -translate-y-1/2 object-contain transition-[opacity,transform] duration-300 motion-reduce:transition-none sm:w-[9.25rem] lg:w-[10.5rem]"
             style={{
               opacity: fullLogoOpacity,
               transform: `translateY(-50%) translateY(${-6 * displayProgress}px) scale(${1 - displayProgress * 0.08})`
@@ -213,7 +213,7 @@ export function SiteHeader({ locale, pageKey }: SiteHeaderProps) {
             width={400}
             height={60}
             priority
-            className="absolute left-0 top-1/2 w-[7rem] -translate-y-1/2 object-contain transition-[opacity,transform] duration-300 motion-reduce:transition-none sm:w-[8rem] lg:w-[9rem]"
+            className="absolute left-0 top-1/2 w-[7rem] origin-left -translate-y-1/2 object-contain transition-[opacity,transform] duration-300 motion-reduce:transition-none sm:w-[8rem] lg:w-[9rem]"
             style={{
               opacity: compactLogoOpacity,
               transform: `translateY(-50%) translateY(${4 - 4 * displayProgress}px) scale(${0.96 + displayProgress * 0.04})`

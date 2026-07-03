@@ -126,9 +126,13 @@ export function MobileMenu({ locale, pageKey }: SiteHeaderProps) {
   const displayProgress = isHome ? progress : 1;
   const isSticky = displayProgress > 0.52;
   const buttonTone = isSticky ? 'border-white/20 text-white' : 'border-[#081524]/25 text-[#081524]';
+  const switcherTone = isSticky ? 'text-white/78' : 'text-[#081524]/74';
 
   return (
-    <div className="md:hidden">
+    <div className="flex items-center gap-4 md:hidden">
+      <span className={`transition-colors duration-300 ${switcherTone}`}>
+        <LanguageSwitcher locale={locale} pageKey={pageKey} />
+      </span>
       <button
         type="button"
         className={`inline-flex size-11 items-center justify-center border transition-colors duration-300 ${buttonTone}`}

@@ -202,7 +202,7 @@ export function SiteHeader({ locale, pageKey }: SiteHeaderProps) {
             width={400}
             height={216}
             priority
-            className="absolute left-0 top-1/2 w-[7.75rem] origin-left -translate-y-1/2 object-contain transition-[opacity,transform] duration-300 motion-reduce:transition-none [--full-logo-drop:0px] sm:w-[9.25rem] lg:w-[10.5rem] lg:[--full-logo-drop:45px]"
+            className="absolute left-0 top-1/2 w-[7.75rem] origin-left -translate-y-1/2 object-contain transition-[opacity,transform] duration-300 motion-reduce:transition-none [--full-logo-drop:80px] sm:w-[9.25rem] lg:w-[10.5rem] lg:[--full-logo-drop:45px]"
             style={{
               opacity: fullLogoOpacity,
               transform: `translateY(-50%) translateY(calc(var(--full-logo-drop) * ${1 - displayProgress} - ${6 * displayProgress}px)) scale(${1 - displayProgress * 0.08})`

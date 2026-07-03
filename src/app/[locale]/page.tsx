@@ -5,6 +5,8 @@ import { HeroSection } from '@/components/HeroSection';
 import { ContentSection, PortalTeaser } from '@/components/PageParts';
 import { SectionHeading } from '@/components/SectionHeading';
 import { cta } from '@/data/site';
+import { routes } from '@/data/content';
+import { pages } from '@/data/pages';
 import { isLocale, pathFor, type Locale } from '@/lib/i18n';
 import { PrimaryButton } from '@/components/Buttons';
 
@@ -60,7 +62,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           </div>
         </div>
       </ContentSection>
-      <ContentSection id={anchors.boaters} tone="mist">
+      <ContentSection tone="mist">
         <SectionHeading
           eyebrow="Lake Juojärvi"
           title={locale === 'fi' ? 'Kirkas vesi, saaret ja hidas kesävalo.' : 'Clear water, islands and slow summer light.'}
@@ -138,6 +140,35 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       <ContentSection>
         <PortalTeaser locale={locale} />
       </ContentSection>
+      <BoatersFinalSection locale={locale} id={anchors.boaters} />
     </main>
+  );
+}
+
+function BoatersFinalSection({ locale, id }: { locale: Locale; id: string }) {
+  const page = pages.boaters;
+
+  return (
+    <ContentSection id={id} tone="dark">
+      <div className="grid gap-12 lg:grid-cols-[0.82fr_1.18fr] lg:items-start">
+        <div>
+          <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[#D9C4A0]">{page.eyebrow[locale]}</p>
+          <h2 className="serif mt-5 text-balance text-4xl font-medium leading-tight text-white md:text-6xl">{page.title[locale]}</h2>
+          <p className="mt-6 text-lg leading-8 text-white/74">{page.intro[locale]}</p>
+          <p className="mt-6 max-w-2xl leading-8 text-white/62">{page.sections[0].body[locale]}</p>
+          <div className="mt-9">
+            <PrimaryButton href={pathFor(locale, 'boaters')}>{locale === 'fi' ? 'Lue veneilijälle' : 'Read for boaters'}</PrimaryButton>
+          </div>
+        </div>
+        <div className="grid gap-4 md:grid-cols-3 lg:grid-cols-1">
+          {routes.map((route) => (
+            <article key={route.title.fi} className="border border-[#D9C4A0]/25 bg-white/[0.045] p-6">
+              <h3 className="serif text-3xl text-[#D9C4A0]">{route.title[locale]}</h3>
+              <p className="mt-4 leading-7 text-white/68">{route.body[locale]}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </ContentSection>
   );
 }

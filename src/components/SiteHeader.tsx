@@ -6,7 +6,7 @@ import { usePathname } from 'next/navigation';
 import { useEffect, useMemo, useState } from 'react';
 import { Menu, X } from './icons';
 import { alternatePath, localeLabels, pathFor, type Locale, type PageKey } from '@/lib/i18n';
-import { navigation, siteMeta } from '@/data/site';
+import { navigation } from '@/data/site';
 
 type SiteHeaderProps = {
   locale: Locale;
@@ -175,6 +175,7 @@ export function SiteHeader({ locale, pageKey }: SiteHeaderProps) {
   const compactLogoOpacity = displayProgress;
   const fullLogoOpacity = 1 - displayProgress;
   const innerPadding = `${20 - displayProgress * 8}px`;
+  const portalLabel = locale === 'fi' ? 'Kirjaudu' : 'Log in';
   const headerStyle = useMemo(
     () => ({
       backgroundColor: `rgba(8, 21, 36, ${backgroundOpacity})`,
@@ -191,7 +192,7 @@ export function SiteHeader({ locale, pageKey }: SiteHeaderProps) {
       style={headerStyle}
     >
       <div
-        className="mx-auto flex max-w-7xl items-center justify-between px-5 transition-[padding] duration-300 motion-reduce:transition-none lg:px-8"
+        className="flex w-full items-center justify-between px-5 transition-[padding] duration-300 motion-reduce:transition-none md:px-6 lg:px-[10vw]"
         style={{ paddingBottom: innerPadding, paddingTop: innerPadding }}
       >
         <Link href={`${pathFor(locale)}#top`} className="relative block h-[3.25rem] w-[8.5rem] shrink-0 sm:h-14 sm:w-[10.5rem] lg:w-[11.5rem]" aria-label="Pitkälahti home">
@@ -216,7 +217,7 @@ export function SiteHeader({ locale, pageKey }: SiteHeaderProps) {
             className="absolute left-0 top-1/2 w-[7rem] origin-left -translate-y-1/2 object-contain transition-[opacity,transform] duration-300 motion-reduce:transition-none sm:w-[8rem] lg:w-[9rem]"
             style={{
               opacity: compactLogoOpacity,
-              transform: `translateY(-50%) translateY(${4 - 4 * displayProgress}px) scale(${0.96 + displayProgress * 0.04})`
+              transform: `translateY(-50%) translateY(${14 - 4 * displayProgress}px) scale(${0.96 + displayProgress * 0.04})`
             }}
           />
         </Link>
@@ -238,7 +239,7 @@ export function SiteHeader({ locale, pageKey }: SiteHeaderProps) {
               isSticky ? 'border-white/22 text-white/84' : 'border-[#081524]/24 text-[#081524]/84'
             }`}
           >
-            {siteMeta.place}
+            {portalLabel}
           </Link>
           <span className={isSticky ? 'text-white/78' : 'text-[#081524]/74'}>
             <LanguageSwitcher locale={locale} pageKey={pageKey} />

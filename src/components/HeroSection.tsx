@@ -1,4 +1,7 @@
+'use client';
+
 import Image from 'next/image';
+import { useEffect, useRef } from 'react';
 import { cta, siteMeta } from '@/data/site';
 import { pathFor, type Locale } from '@/lib/i18n';
 import { AnchorMotif } from './icons';
@@ -6,16 +9,50 @@ import { PrimaryButton, SecondaryButton } from './Buttons';
 
 export function HeroSection({ locale }: { locale: Locale }) {
   const exploreHref = locale === 'fi' ? '#historia' : '#history';
+  const heroRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const hero = heroRef.current;
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    let frame = 0;
+
+    const update = () => {
+      frame = 0;
+      const progress = reduceMotion.matches ? 0 : Math.min(1, Math.max(0, window.scrollY / 150));
+      hero?.style.setProperty('--hero-image-scroll', progress.toFixed(3));
+    };
+
+    const onScroll = () => {
+      if (frame === 0) {
+        frame = window.requestAnimationFrame(update);
+      }
+    };
+
+    update();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    reduceMotion.addEventListener('change', update);
+
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      reduceMotion.removeEventListener('change', update);
+      if (frame) window.cancelAnimationFrame(frame);
+    };
+  }, []);
 
   return (
-    <section id="top" className="lake-art relative flex min-h-screen items-end overflow-hidden text-white">
+    <section
+      id="top"
+      ref={heroRef}
+      className="lake-art relative flex min-h-screen items-end overflow-hidden text-white [--hero-image-scroll:0] [--hero-image-shift:4.5%] lg:[--hero-image-shift:9%]"
+    >
       <Image
         src="/assets/pitkalahti-outokumpu-satama.jpeg"
         alt={locale === 'fi' ? 'Ilmakuva Pitkälahden satamasta, venevajoista, veneistä ja metsäisestä Juojärven rannasta auringonlaskussa' : 'Aerial view of Pitkälahti harbour, boat sheds, boats and forested Lake Juojärvi shoreline at sunset'}
         fill
         priority
         sizes="100vw"
-        className="object-cover object-[42%_center] md:object-center"
+        className="absolute inset-x-0 top-0 !h-[104.5%] object-cover object-[42%_top] will-change-transform md:object-top lg:!h-[109%]"
+        style={{ transform: 'translate3d(0, calc(var(--hero-image-scroll) * var(--hero-image-shift) * -1), 0)' }}
       />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_24%_78%,rgba(8,21,36,0.72)_0%,rgba(8,21,36,0.44)_32%,rgba(8,21,36,0.12)_52%,transparent_72%)]" />
       <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-[#081524]/44 to-transparent" />

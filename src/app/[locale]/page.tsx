@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import { EventGrid, GalleryMosaic, HarbourStatus, MapSection, RouteGrid, Timeline } from '@/components/Cards';
 import { HeroSection } from '@/components/HeroSection';
 import { ContentSection, PortalTeaser } from '@/components/PageParts';
+import { ImageFrame } from '@/components/ImageFrame';
 import { SectionHeading } from '@/components/SectionHeading';
 import { cta } from '@/data/site';
 import { routes } from '@/data/content';
@@ -61,6 +62,15 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
             </p>
           </div>
         </div>
+        <figure className="mt-14">
+          <ImageFrame
+            imageKey="boatShedsSunset"
+            locale={locale}
+            priority
+            className="aspect-[16/9] border border-[#081524]/12 md:aspect-[21/9]"
+            sizes="(min-width: 1280px) 1280px, 100vw"
+          />
+        </figure>
       </ContentSection>
       <ContentSection tone="mist">
         <SectionHeading
@@ -74,6 +84,10 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         />
         <div className="mt-12">
           <RouteGrid locale={locale} />
+        </div>
+        <div className="mt-12 grid gap-4 md:grid-cols-[1.35fr_0.65fr]">
+          <ImageFrame imageKey="swimmingBeach" locale={locale} className="aspect-[16/10] md:aspect-[16/9]" sizes="(min-width: 768px) 62vw, 100vw" />
+          <ImageFrame imageKey="supSunset" locale={locale} className="aspect-[4/5] md:aspect-auto md:min-h-full" sizes="(min-width: 768px) 28vw, 100vw" />
         </div>
       </ContentSection>
       <ContentSection id={anchors.harbour}>
@@ -89,6 +103,9 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           />
           <HarbourStatus locale={locale} />
         </div>
+        <figure className="mt-12">
+          <ImageFrame imageKey="harbourDaylight" locale={locale} className="aspect-[16/9] border border-[#081524]/12 md:aspect-[21/9]" sizes="(min-width: 1280px) 1280px, 100vw" />
+        </figure>
       </ContentSection>
       <ContentSection id={anchors.events} tone="mist">
         <div className="mb-12 flex flex-col justify-between gap-6 md:flex-row md:items-end">
@@ -103,6 +120,9 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           />
           <PrimaryButton href={pathFor(locale, 'events')}>{cta.allEvents[locale]}</PrimaryButton>
         </div>
+        <figure className="mb-8">
+          <ImageFrame imageKey="harbourEvent" locale={locale} className="aspect-[16/10] border border-[#081524]/12 md:aspect-[21/9]" sizes="(min-width: 1280px) 1280px, 100vw" />
+        </figure>
         <EventGrid locale={locale} />
       </ContentSection>
       <ContentSection>
@@ -153,6 +173,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         <PortalTeaser locale={locale} />
       </ContentSection>
       <BoatersFinalSection locale={locale} id={anchors.boaters} />
+      <FinalVisualMoment locale={locale} />
     </main>
   );
 }
@@ -173,6 +194,7 @@ function BoatersFinalSection({ locale, id }: { locale: Locale; id: string }) {
           </div>
         </div>
         <div className="grid gap-4 md:grid-cols-3 lg:grid-cols-1">
+          <ImageFrame imageKey="familyBoatSunset" locale={locale} className="aspect-[16/9] border border-[#D9C4A0]/25 md:col-span-3 lg:col-span-1" sizes="(min-width: 1024px) 46vw, 100vw" />
           {routes.map((route) => (
             <article key={route.title.fi} className="border border-[#D9C4A0]/25 bg-white/[0.045] p-6">
               <h3 className="serif text-3xl text-[#D9C4A0]">{route.title[locale]}</h3>
@@ -182,5 +204,15 @@ function BoatersFinalSection({ locale, id }: { locale: Locale; id: string }) {
         </div>
       </div>
     </ContentSection>
+  );
+}
+
+function FinalVisualMoment({ locale }: { locale: Locale }) {
+  return (
+    <section className="bg-[#081524] px-5 pb-16 lg:px-8">
+      <div className="mx-auto max-w-7xl">
+        <ImageFrame imageKey="mistyHarbourSunrise" locale={locale} className="aspect-[16/9] md:aspect-[21/8]" sizes="(min-width: 1280px) 1280px, 100vw" />
+      </div>
+    </section>
   );
 }

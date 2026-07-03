@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { EventGrid, GalleryMosaic, HarbourStatus, MapSection, RouteGrid, Timeline } from '@/components/Cards';
 import { ContactPanel, ContentSection, PageHero, PortalTeaser } from '@/components/PageParts';
+import { ImageFrame } from '@/components/ImageFrame';
 import { SectionHeading } from '@/components/SectionHeading';
 import { pages } from '@/data/pages';
 import { isLocale, locales, pageKeyFromSlug, routeSlugs, type Locale, type PageKey } from '@/lib/i18n';
@@ -69,14 +70,12 @@ function PageSpecific({ keyName, locale }: { keyName: PageKey; locale: Locale })
           <Timeline locale={locale} />
         </ContentSection>
         <ContentSection>
-          <div className="grid gap-5 md:grid-cols-3">
-            {['1918', 'Venevajat', 'Juojärvi'].map((item) => (
-              <figure key={item} className="min-h-64 bg-[#B3B0A8] p-5">
-                <figcaption className="text-sm uppercase tracking-[0.2em] text-[#081524]/70">
-                  {locale === 'fi' ? `Pitkälahden historia: ${item}` : `Pitkälahti history: ${item}`}
-                </figcaption>
-              </figure>
-            ))}
+          <div className="grid gap-5">
+            <ImageFrame imageKey="boatShedsSunset" locale={locale} className="aspect-[16/9] border border-[#081524]/12 md:aspect-[21/9]" sizes="(min-width: 1280px) 1280px, 100vw" />
+            <div className="grid gap-5 md:grid-cols-2">
+              <ImageFrame imageKey="railway1918" locale={locale} className="aspect-[3/2] border border-[#081524]/12" sizes="(min-width: 768px) 50vw, 100vw" />
+              <ImageFrame imageKey="sawmill1951" locale={locale} className="aspect-[3/2] border border-[#081524]/12" sizes="(min-width: 768px) 50vw, 100vw" />
+            </div>
           </div>
         </ContentSection>
       </>
@@ -87,7 +86,16 @@ function PageSpecific({ keyName, locale }: { keyName: PageKey; locale: Locale })
     return (
       <>
         <ContentSection tone="mist">
+          <figure className="mb-10">
+            <ImageFrame imageKey="harbourDaylight" locale={locale} className="aspect-[16/9] border border-[#081524]/12 md:aspect-[21/9]" sizes="(min-width: 1280px) 1280px, 100vw" />
+          </figure>
           <HarbourStatus locale={locale} />
+        </ContentSection>
+        <ContentSection>
+          <div className="grid gap-5 md:grid-cols-[0.55fr_1fr]">
+            <ImageFrame imageKey="annaKrakowa" locale={locale} className="aspect-[3/4] border border-[#081524]/12" sizes="(min-width: 768px) 36vw, 100vw" />
+            <ImageFrame imageKey="iiriBoat" locale={locale} className="aspect-[16/10] border border-[#081524]/12 md:min-h-full" sizes="(min-width: 768px) 58vw, 100vw" />
+          </div>
         </ContentSection>
         <ContentSection>
           <MapSection locale={locale} />
@@ -99,6 +107,9 @@ function PageSpecific({ keyName, locale }: { keyName: PageKey; locale: Locale })
   if (keyName === 'events') {
     return (
       <ContentSection tone="mist">
+        <figure className="mb-10">
+          <ImageFrame imageKey="harbourEvent" locale={locale} className="aspect-[16/10] border border-[#081524]/12 md:aspect-[21/9]" sizes="(min-width: 1280px) 1280px, 100vw" />
+        </figure>
         <div className="mb-8 flex flex-wrap gap-3">
           {['Kesä / Summer', 'Historia / History', 'Järvielämä / Lake life'].map((filter) => (
             <span key={filter} className="border border-[#081524]/20 px-4 py-2 text-sm uppercase tracking-[0.16em] text-[#081524]/70">
@@ -106,7 +117,10 @@ function PageSpecific({ keyName, locale }: { keyName: PageKey; locale: Locale })
             </span>
           ))}
         </div>
-        <EventGrid locale={locale} />
+        <div className="grid gap-8 lg:grid-cols-[1fr_0.36fr]">
+          <EventGrid locale={locale} />
+          <ImageFrame imageKey="midsummerBonfire" locale={locale} className="aspect-[4/5] border border-[#081524]/12 lg:min-h-full" sizes="(min-width: 1024px) 28vw, 100vw" />
+        </div>
       </ContentSection>
     );
   }
@@ -126,9 +140,29 @@ function PageSpecific({ keyName, locale }: { keyName: PageKey; locale: Locale })
     );
   }
 
-  if (keyName === 'boaters' || keyName === 'things') {
+  if (keyName === 'boaters') {
     return (
       <ContentSection tone="mist">
+        <div className="mb-10 grid gap-5 md:grid-cols-[1.4fr_0.8fr]">
+          <ImageFrame imageKey="familyBoatSunset" locale={locale} className="aspect-[16/9] border border-[#081524]/12" sizes="(min-width: 768px) 62vw, 100vw" />
+          <ImageFrame imageKey="rowboatEvening" locale={locale} className="aspect-[4/5] border border-[#081524]/12 md:aspect-auto md:min-h-full" sizes="(min-width: 768px) 34vw, 100vw" />
+        </div>
+        <RouteGrid locale={locale} />
+      </ContentSection>
+    );
+  }
+
+  if (keyName === 'things') {
+    return (
+      <ContentSection tone="mist">
+        <div className="mb-10 grid gap-5 md:grid-cols-2">
+          <ImageFrame imageKey="swimmingBeach" locale={locale} className="aspect-[16/10] border border-[#081524]/12 md:col-span-2 md:aspect-[21/9]" sizes="(min-width: 1280px) 1280px, 100vw" />
+          <ImageFrame imageKey="supSunset" locale={locale} className="aspect-[4/5] border border-[#081524]/12" sizes="(min-width: 768px) 50vw, 100vw" />
+          <div className="grid gap-5">
+            <ImageFrame imageKey="forestTrail" locale={locale} className="aspect-[4/3] border border-[#081524]/12" sizes="(min-width: 768px) 50vw, 100vw" />
+            <ImageFrame imageKey="feetInWater" locale={locale} className="aspect-[16/10] border border-[#081524]/12" sizes="(min-width: 768px) 50vw, 100vw" />
+          </div>
+        </div>
         <RouteGrid locale={locale} />
       </ContentSection>
     );

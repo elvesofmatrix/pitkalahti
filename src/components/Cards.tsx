@@ -1,5 +1,7 @@
 import type { Locale } from '@/lib/i18n';
 import { events, galleryItems, harbourServices, routes, timeline } from '@/data/content';
+import type { PitkalahtiImageKey } from '@/data/images';
+import { ImageFrame } from './ImageFrame';
 import { SectionHeading } from './SectionHeading';
 
 export function EventCard({ event, locale }: { event: (typeof events)[number]; locale: Locale }) {
@@ -24,14 +26,15 @@ export function EventGrid({ locale }: { locale: Locale }) {
 
 export function GalleryMosaic({ locale }: { locale: Locale }) {
   return (
-    <div className="grid auto-rows-[180px] gap-4 md:grid-cols-5">
-      {galleryItems.map((item, index) => (
+    <div className="grid auto-rows-[210px] gap-4 sm:grid-cols-2 lg:grid-cols-5">
+      {galleryItems.map((item) => (
         <figure
           key={item.title.fi}
-          className={`${item.tone} relative overflow-hidden p-5 text-white ${index === 0 ? 'md:col-span-2 md:row-span-2' : ''} ${index === 1 ? 'md:col-span-2' : ''}`}
+          className={`relative overflow-hidden bg-[#081524] text-white ${item.tile}`}
         >
-          <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.16),transparent_52%)]" />
-          <figcaption className="relative flex h-full flex-col justify-end">
+          <ImageFrame imageKey={item.imageKey as PitkalahtiImageKey} locale={locale} className="h-full w-full" sizes="(min-width: 1024px) 20vw, (min-width: 640px) 50vw, 100vw" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#081524]/78 via-[#081524]/12 to-transparent" />
+          <figcaption className="absolute inset-0 flex flex-col justify-end p-5">
             <span className="text-xs font-semibold uppercase tracking-[0.22em] text-white/66">{item.category[locale]}</span>
             <span className="serif mt-2 text-3xl">{item.title[locale]}</span>
           </figcaption>
@@ -50,6 +53,11 @@ export function Timeline({ locale }: { locale: Locale }) {
           <div>
             <h3 className="serif text-3xl text-[#081524]">{item.title[locale]}</h3>
             <p className="mt-3 max-w-3xl leading-8 text-[#3B4B58]">{item.body[locale]}</p>
+            {item.year.fi === '1918' ? (
+              <figure className="mt-7 max-w-3xl">
+                <ImageFrame imageKey="railway1918" locale={locale} className="aspect-[3/2] border border-[#081524]/12" sizes="(min-width: 768px) 720px, 100vw" />
+              </figure>
+            ) : null}
           </div>
         </article>
       ))}

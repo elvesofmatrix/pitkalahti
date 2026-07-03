@@ -37,27 +37,74 @@ export const galleryItems = [
   {
     title: { fi: 'Puinen rytmi veden reunalla', en: 'A wooden rhythm along the water' },
     category: { fi: 'Venevajat', en: 'Boat sheds' },
-    tone: 'bg-[#8B3A2B]'
+    imageKey: 'boatShedsSunset',
+    tile: 'md:col-span-3 md:row-span-2'
   },
   {
-    title: { fi: 'Kirkas järvivesi ja hiljaiset selät', en: 'Clear water and quiet open stretches' },
-    category: { fi: 'Järvielämä', en: 'Lake life' },
-    tone: 'bg-[#0B1E33]'
+    title: { fi: 'Satama kesäpäivänä', en: 'Harbour on a summer day' },
+    category: { fi: 'Satama', en: 'Harbour' },
+    imageKey: 'harbourDaylight',
+    tile: 'md:col-span-2'
   },
   {
     title: { fi: 'Kuparin ja sumun sävyt', en: 'Shades of copper and mist' },
+    category: { fi: 'Aamuvalo', en: 'Morning light' },
+    imageKey: 'mistyHarbourSunrise',
+    tile: 'md:col-span-2'
+  },
+  {
+    title: { fi: 'Syksyn värit rannassa', en: 'Autumn colours by the shore' },
     category: { fi: 'Syksy', en: 'Autumn' },
-    tone: 'bg-[#B65F32]'
+    imageKey: 'autumn',
+    tile: ''
   },
   {
-    title: { fi: 'Lumen ja jään hiljaisuus', en: 'The silence of snow and ice' },
+    title: { fi: 'Talven hiljaisuus', en: 'The silence of winter' },
     category: { fi: 'Talvi', en: 'Winter' },
-    tone: 'bg-[#B3B0A8]'
+    imageKey: 'winter',
+    tile: 'md:col-span-2'
   },
   {
-    title: { fi: 'Valo myöhään illalla', en: 'Light that lingers late into the evening' },
+    title: { fi: 'Kesä kukkaniityllä', en: 'Summer among wildflowers' },
     category: { fi: 'Kesä', en: 'Summer' },
-    tone: 'bg-[#D9C4A0]'
+    imageKey: 'childWildflowers',
+    tile: ''
+  },
+  {
+    title: { fi: 'Laituri iltavalossa', en: 'Dock in evening light' },
+    category: { fi: 'Järvielämä', en: 'Lake life' },
+    imageKey: 'sunsetDock',
+    tile: ''
+  },
+  {
+    title: { fi: 'Melojat auringonlaskussa', en: 'Paddlers at sunset' },
+    category: { fi: 'Melonta', en: 'Paddling' },
+    imageKey: 'supSunset',
+    tile: ''
+  },
+  {
+    title: { fi: 'Juhannuskokko rannalla', en: 'Midsummer bonfire by the lake' },
+    category: { fi: 'Tapahtumat', en: 'Events' },
+    imageKey: 'midsummerBonfire',
+    tile: 'md:row-span-2'
+  },
+  {
+    title: { fi: 'Kapearaiteinen rautatie', en: 'Narrow-gauge railway' },
+    category: { fi: 'Historia', en: 'History' },
+    imageKey: 'railway1918',
+    tile: 'md:col-span-2'
+  },
+  {
+    title: { fi: 'Saha ja ranta vuonna 1951', en: 'Sawmill and shoreline in 1951' },
+    category: { fi: 'Historia', en: 'History' },
+    imageKey: 'sawmill1951',
+    tile: 'md:col-span-2'
+  },
+  {
+    title: { fi: 'Veneellä vajojen välissä', en: 'Boating between the sheds' },
+    category: { fi: 'Veneily', en: 'Boating' },
+    imageKey: 'familyBoatSunset',
+    tile: 'md:col-span-2'
   }
 ];
 

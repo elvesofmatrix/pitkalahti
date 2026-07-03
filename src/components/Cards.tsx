@@ -3,17 +3,11 @@ import { events, galleryItems, harbourServices, routes, timeline } from '@/data/
 import { SectionHeading } from './SectionHeading';
 
 export function EventCard({ event, locale }: { event: (typeof events)[number]; locale: Locale }) {
-  const date = new Intl.DateTimeFormat(locale === 'fi' ? 'fi-FI' : 'en-GB', { month: 'long', day: 'numeric', year: 'numeric' }).format(new Date(event.date));
-
   return (
     <article className="border border-[#0B1E33]/12 bg-white/55 p-6">
       <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#B65F32]">{event.category[locale]}</p>
       <h3 className="serif mt-5 text-3xl text-[#081524]">{event.title[locale]}</h3>
-      <time className="mt-3 block text-sm font-semibold text-[#4D5A63]" dateTime={event.date}>
-        {date}
-      </time>
       <p className="mt-5 leading-7 text-[#3B4B58]">{event.description[locale]}</p>
-      {event.note ? <p className="mt-5 text-sm text-[#8B3A2B]">{event.note[locale]}</p> : null}
     </article>
   );
 }
@@ -51,8 +45,8 @@ export function Timeline({ locale }: { locale: Locale }) {
   return (
     <div className="grid gap-5">
       {timeline.map((item) => (
-        <article key={item.year} className="grid gap-4 border-t border-[#081524]/15 py-7 md:grid-cols-[180px_1fr]">
-          <p className="serif text-4xl text-[#8B3A2B]">{item.year}</p>
+        <article key={item.title.fi} className="grid gap-4 border-t border-[#081524]/15 py-7 md:grid-cols-[180px_1fr]">
+          <p className="serif text-4xl text-[#8B3A2B]">{item.year[locale]}</p>
           <div>
             <h3 className="serif text-3xl text-[#081524]">{item.title[locale]}</h3>
             <p className="mt-3 max-w-3xl leading-8 text-[#3B4B58]">{item.body[locale]}</p>
@@ -104,8 +98,8 @@ export function MapSection({ locale }: { locale: Locale }) {
         title={locale === 'fi' ? 'Outokummun järvimaisemaan.' : 'Into Outokumpu’s lake landscape.'}
         intro={
           locale === 'fi'
-            ? 'Karttanäkymä on tässä vaiheessa avaimeton havainnekuva. Tarkemmat ajo- ja satamaohjeet lisätään vahvistettuina.'
-            : 'The map view is currently a keyless illustration. Verified driving and harbour instructions will be added later.'
+            ? 'Pitkälahti sijaitsee Juojärven rannalla Outokummun järvimaisemassa. Lahteen voi saapua omalla tavallaan – vesitse, maitse tai osana pidempää retkeä lähialueella. Karttanäkymä auttaa hahmottamaan Pitkälahden sijainnin suhteessa Juojärveen ja Outokumpuun. Tarkemmat ajo- ja reittiohjeet kannattaa tarkistaa omasta karttasovelluksesta tai navigaattorista ennen matkaa.'
+            : 'Pitkälahti lies on the shores of Lake Juojärvi in the lakeland landscape of Outokumpu. You can arrive in your own way – by water, by road or as part of a longer outing in the surrounding area. The map helps place Pitkälahti in relation to Lake Juojärvi and Outokumpu. For detailed driving directions and route information, please use your own navigation app or chart plotter before travelling.'
         }
       />
       <div className="relative min-h-[320px] overflow-hidden bg-[#0B1E33]">

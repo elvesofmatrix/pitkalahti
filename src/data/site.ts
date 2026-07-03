@@ -10,8 +10,8 @@ export const siteMeta = {
     en: 'Harbour of quiet waters.'
   },
   description: {
-    fi: 'Pitkälahti on Juojärven historiallisen venevajakylän sydän - paikka, jossa vesi, valo ja yhteisö kohtaavat.',
-    en: 'Pitkälahti is the heart of Juojärvi’s historic boat shed village - a place where water, light and community come together.'
+    fi: 'Pitkälahti on Juojärven historiallisen venevajakylän sydän – pitkä, suojaisa lahti, jonka rannoilla seisoo venevajoja ja järvielämän kerroksia. Täällä maisema syntyy hiljaisesta vedestä, puusta, valosta ja paikallisesta rytmistä.',
+    en: 'Pitkälahti is the heart of a historic boat shed village on Lake Juojärvi – a long, sheltered bay shaped by wooden sheds, still water, light and everyday lake life.'
   }
 } satisfies {
   name: string;
@@ -40,8 +40,8 @@ export const homeAnchors = [
 ] satisfies Array<{ id: string; label: Localized<string> }>;
 
 export const cta = {
-  explore: { fi: 'Tutustu satamaan', en: 'Explore the harbour' },
-  portal: { fi: 'Venevajaportaali', en: 'Boat shed portal' },
+  explore: { fi: 'Tutustu Pitkälahteen', en: 'Discover Pitkälahti' },
+  portal: { fi: 'Venevajaportaali', en: 'Boat Shed Portal' },
   readHistory: { fi: 'Lue historia', en: 'Read the story' },
   allEvents: { fi: 'Katso tapahtumat', en: 'View events' },
   contact: { fi: 'Ota yhteyttä', en: 'Contact' }

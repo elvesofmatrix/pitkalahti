@@ -2,68 +2,60 @@ import type { Localized } from './site';
 
 export type EventItem = {
   title: Localized<string>;
-  date: string;
   category: Localized<string>;
   description: Localized<string>;
-  note?: Localized<string>;
 };
 
 export const events: EventItem[] = [
   {
-    title: { fi: 'Kesäillan satamakävely', en: 'Summer evening harbour walk' },
-    date: '2026-06-27',
-    category: { fi: 'Ohjelmaesimerkki', en: 'Sample programme' },
+    title: { fi: 'Kesäillan venevajakierros', en: 'An evening among the boat sheds' },
+    category: { fi: 'Satamakävelyt', en: 'Harbour walks' },
     description: {
-      fi: 'Rauhallinen kävely venevajakylän tunnelmaan, järven valoon ja paikalliseen tarinaan.',
-      en: 'A quiet walk through the boat shed village atmosphere, lake light and local story.'
-    },
-    note: { fi: 'Demosisältö - ajankohta varmistuu myöhemmin.', en: 'Demo content - timing to be confirmed.' }
+      fi: 'Rauhallinen kävely venevajojen lomassa antaa aikaa katsella puun sävyjä, veden heijastuksia ja lahden omaa rytmiä.',
+      en: 'A slow walk along the line of sheds gives you time to notice the colours of the timber, reflections on the water and the bay’s own rhythm.'
+    }
   },
   {
-    title: { fi: 'Juojärven melontapäivä', en: 'Lake Juojärvi paddling day' },
-    date: '2026-07-18',
+    title: { fi: 'Juojärven vesipäivä', en: 'A day on Lake Juojärvi' },
     category: { fi: 'Järvielämä', en: 'Lake life' },
     description: {
-      fi: 'Kevyt tapahtumakonsepti melojille ja järviluonnosta kiinnostuneille.',
-      en: 'A light event concept for paddlers and visitors interested in lake nature.'
-    },
-    note: { fi: 'Ohjelmaluonnos.', en: 'Programme concept.' }
+      fi: 'Melontaa, soutua tai rauhallista veneilyä – Juojärven selät ja saaret tarjoavat monenlaisia tapoja viettää päivä veden äärellä.',
+      en: 'Paddling, rowing or gentle boating – the open waters and islands of Juojärvi offer many ways to spend a day by the lake.'
+    }
   },
   {
     title: { fi: 'Vajojen tarinat', en: 'Stories of the sheds' },
-    date: '2026-08-08',
-    category: { fi: 'Historia', en: 'History' },
+    category: { fi: 'Historia ja yhteisö', en: 'History and community' },
     description: {
-      fi: 'Paikallishistoriaan nojaava iltapäivä, jossa työ, vesireitit ja vapaa-aika kohtaavat.',
-      en: 'An afternoon shaped by local history, where work, waterways and leisure meet.'
-    },
-    note: { fi: 'Esimerkkitapahtuma.', en: 'Sample event.' }
+      fi: 'Venevajoihin liittyy muistoja ensimmäisistä veneistä, kalareissuista, talkoista ja kesäilloista. Tarinat tuovat yhteen niin paikallisia kuin uusia vierailijoitakin.',
+      en: 'The boat sheds hold memories of first boats, fishing trips, shared work days and summer evenings. These stories connect long-time locals with visitors discovering Pitkälahti for the first time.'
+    }
   }
 ];
 
 export const galleryItems = [
   {
-    title: { fi: 'Venevajojen rytmi', en: 'Rhythm of the boat sheds' },
-    category: { fi: 'Venevajat', en: 'Boat Sheds' },
+    title: { fi: 'Puinen rytmi veden reunalla', en: 'A wooden rhythm along the water' },
+    category: { fi: 'Venevajat', en: 'Boat sheds' },
     tone: 'bg-[#8B3A2B]'
   },
   {
-    title: { fi: 'Kirkas järvivesi', en: 'Clear lake water' },
-    category: { fi: 'Järvielämä', en: 'Lake Life' },
+    title: { fi: 'Kirkas järvivesi ja hiljaiset selät', en: 'Clear water and quiet open stretches' },
+    category: { fi: 'Järvielämä', en: 'Lake life' },
     tone: 'bg-[#0B1E33]'
   },
   {
-    title: { fi: 'Syksyn kupari', en: 'Autumn copper' },
+    title: { fi: 'Kuparin ja sumun sävyt', en: 'Shades of copper and mist' },
     category: { fi: 'Syksy', en: 'Autumn' },
     tone: 'bg-[#B65F32]'
   },
   {
-    title: { fi: 'Talven hiljaisuus', en: 'Winter quiet' },
+    title: { fi: 'Lumen ja jään hiljaisuus', en: 'The silence of snow and ice' },
     category: { fi: 'Talvi', en: 'Winter' },
     tone: 'bg-[#B3B0A8]'
   },
   {
-    title: { fi: 'Kesän valo', en: 'Summer light' },
+    title: { fi: 'Valo myöhään illalla', en: 'Light that lingers late into the evening' },
     category: { fi: 'Kesä', en: 'Summer' },
     tone: 'bg-[#D9C4A0]'
   }
@@ -72,83 +64,83 @@ export const galleryItems = [
 export const harbourServices = [
   {
     title: { fi: 'Saapumistieto', en: 'Arrival information' },
-    status: { fi: 'Informatiivinen', en: 'Informational' },
+    status: { fi: 'Vierailijalle', en: 'For visitors' },
     description: {
-      fi: 'Ensimmäinen versio kokoaa vierailijan kannalta olennaisen satamaympäristön yleisesittelyn.',
-      en: 'The first version gathers a visitor-oriented overview of the harbour setting.'
+      fi: 'Pitkälahti sijaitsee Juojärven rannalla Outokummun järvimaisemassa. Lahden suu ja venevajojen rivistö tekevät paikasta helposti tunnistettavan vesiltä saavuttaessa.',
+      en: 'Pitkälahti lies on the shores of Lake Juojärvi in the lakeland landscape of Outokumpu. The mouth of the bay and the line of boat sheds make the place easy to recognise when arriving from the water.'
     }
   },
   {
-    title: { fi: 'Palvelutiedot', en: 'Service details' },
-    status: { fi: 'Varmennetaan', en: 'To be confirmed' },
+    title: { fi: 'Varautuminen matkalle', en: 'Prepare for your visit' },
+    status: { fi: 'Suunnittele itse', en: 'Plan ahead' },
     description: {
-      fi: 'Yksittäiset palvelut, aukioloajat ja varauskäytännöt lisätään vasta vahvistuksen jälkeen.',
-      en: 'Specific services, opening hours and booking practices will be added after confirmation.'
+      fi: 'Kun liikut järvellä tai saavut maitse, varaudu retkeen omien tarpeidesi mukaan. Ajantasainen sää, kartat, varusteet ja reittisuunnitelma tekevät vierailusta rennomman.',
+      en: 'Whether you arrive by water or by road, prepare for your trip according to your own needs. Up-to-date weather, charts, equipment and route planning make the visit more relaxed.'
     }
   },
   {
-    title: { fi: 'Tapahtumaohjelma', en: 'Event programme' },
-    status: { fi: 'Luonnos', en: 'Draft' },
+    title: { fi: 'Sataman tavat', en: 'Harbour etiquette' },
+    status: { fi: 'Yhteinen alue', en: 'Shared shoreline' },
     description: {
-      fi: 'Tapahtumakortit näyttävät tulevan ohjelmasisällön rakenteen demodatalla.',
-      en: 'Event cards show the future programme structure with demo data.'
+      fi: 'Pitkälahti on jaettu ympäristö. Ystävällinen tervehdys, siisti jälki ja kohtuullinen äänentaso tekevät rannasta miellyttävän kaikille – paikallisille, veneilijöille ja vierailijoille.',
+      en: 'Pitkälahti is a shared environment. A friendly greeting, leaving no trace and keeping noise at a reasonable level help make the shoreline pleasant for everyone.'
     }
   }
 ];
 
 export const timeline = [
   {
-    year: '1918',
-    title: { fi: 'Kapearaiteinen yhteys', en: 'Narrow-gauge connection' },
+    year: { fi: '1918', en: '1918' },
+    title: { fi: 'Kapearaiteinen yhteys', en: 'A narrow-gauge connection' },
     body: {
-      fi: 'Outokummun kaivoksen ja Pitkälahden välinen kapearaiteinen yhteys liitti työn, vesireitit ja sataman samaan tarinaan.',
-      en: 'The narrow-gauge connection between the Outokumpu mine and Pitkälahti linked work, waterways and the harbour into one story.'
+      fi: 'Pitkälahden ja Outokummun historiaan kuuluu yhteys, jossa työ, vesireitit ja satama kulkivat rinnakkain. Rautatie ja järvi muodostivat aikanaan osan alueen arjen ja liikkumisen kokonaisuutta.',
+      en: 'The history of Pitkälahti and Outokumpu includes a connection where work, waterways and the harbour moved side by side. The railway and the lake once formed part of the area’s everyday life and movement.'
     }
   },
   {
-    year: '1900-luku',
+    year: { fi: '1900-luku', en: '20th century' },
     title: { fi: 'Venevajakylän kerrokset', en: 'Layers of the boat shed village' },
     body: {
-      fi: 'Venevajat kertovat järven käytöstä, yhteisöstä ja kesäisestä rytmistä sukupolvien yli.',
-      en: 'The boat sheds speak of lake use, community and summer rhythms across generations.'
+      fi: 'Venevajat kertovat järven käytöstä, yhteisöstä ja kesäisestä rytmistä. Vuosikymmenten aikana niiden ympärille on muodostunut maisema, jossa käytännöllisyys ja vapaa-aika elävät rinnakkain.',
+      en: 'The boat sheds tell a story of lake use, community and the rhythm of summer. Over the decades, the area has grown into a landscape where practicality and free time meet.'
     }
   },
   {
-    year: 'Nyt',
+    year: { fi: 'Nyt', en: 'Today' },
     title: { fi: 'Sataman uusi digitaalinen vaihe', en: 'A new digital chapter' },
     body: {
-      fi: 'Pitkälahti rakentaa näkyvyyttä, vierailukokemusta ja tulevia jäsenpalveluja rauhallisesti ja paikallista luonnetta kunnioittaen.',
-      en: 'Pitkälahti is shaping visibility, visitor experience and future member services with calm respect for local character.'
+      fi: 'Pitkälahti tekee itseään tutummaksi myös verkossa. Tavoitteena on antaa rauhallinen ja ajantasainen kuva satamasta, Juojärvestä ja venevajakylästä sekä paikallisille että kauempaa tuleville vierailijoille.',
+      en: 'Today Pitkälahti is becoming easier to discover online as well. The aim is to offer a calm and current picture of the harbour, Lake Juojärvi and the boat shed village for both local people and visitors from further away.'
     }
   }
 ];
 
 export const routes = [
   {
-    title: { fi: 'Saariretket Juojärvellä', en: 'Island outings on Juojärvi' },
+    title: { fi: 'Saariretket Juojärvellä', en: 'Island trips on Lake Juojärvi' },
     body: {
-      fi: 'Suunnittele retki sää, kokemus ja varusteet huomioiden. Järvelle lähdetään aina paikalliset olosuhteet edellä.',
-      en: 'Plan outings around weather, experience and equipment. Local conditions always come first on the lake.'
+      fi: 'Juojärven saarissa ja rannoissa riittää tutkittavaa niin lyhyille kuin pidemmillekin retkille. Matkaa suunnitellessa kannattaa sovittaa reitti omaan kokemukseen, säähän ja käytettävissä olevaan aikaan.',
+      en: 'The islands and shores of Lake Juojärvi offer plenty to explore on both short and longer outings. Plan your route around your experience, the weather and the time you have available.'
     }
   },
   {
-    title: { fi: 'Valamon suunta', en: 'Toward Valamo' },
+    title: { fi: 'Valamon suunta', en: 'Towards Valamo' },
     body: {
-      fi: 'Juojärven reitit avaavat mielikuvan pidemmistä retkistä Valamon suuntaan.',
-      en: 'Lake Juojärvi routes suggest longer excursions in the direction of Valamo.'
+      fi: 'Juojärven vesiltä avautuu ajatus pidemmistä retkistä kohti Valamon ja Heinäveden reitin maisemia. Pitkälahti on luonteva paikka pysähtyä ennen matkaa tai sen jälkeen, kun reitti on suunniteltu huolellisesti.',
+      en: 'The waters of Juojärvi invite thoughts of longer journeys towards Valamo and the Heinävesi route. Pitkälahti is a natural place to pause before or after a carefully planned trip.'
     }
   },
   {
     title: { fi: 'Melonta ja kalastus', en: 'Paddling and fishing' },
     body: {
-      fi: 'Rauhallinen vesi, saaret ja vuodenaikojen valo tekevät alueesta luontevan lähtöpisteen järvielämään.',
-      en: 'Quiet water, islands and seasonal light make the area a natural starting point for lake life.'
+      fi: 'Rauhallinen vesi, saarien väliset salmet ja vuodenaikojen valo tekevät Juojärvestä miellyttävän ympäristön niin melojalle kuin kalastajallekin. Pitkälahti sopii hyvin retken lähtö- tai paluupisteeksi omatoimiselle järvipäivälle.',
+      en: 'Calm waters, narrow sounds between islands and changing seasonal light make Juojärvi a pleasant environment for both paddlers and anglers. Pitkälahti is well suited as a starting or finishing point for an independent day on the lake.'
     }
   }
 ];
 
 export const contactPlaceholders = {
-  address: { fi: 'Pitkälahti, Outokumpu - tarkka osoite varmistetaan', en: 'Pitkälahti, Outokumpu - exact address to be confirmed' },
-  email: { fi: 'Sähköposti lisätään myöhemmin', en: 'Email to be added later' },
-  phone: { fi: 'Puhelintieto lisätään myöhemmin', en: 'Phone details to be added later' }
+  address: { fi: 'Pitkälahti, Outokumpu', en: 'Pitkälahti, Outokumpu' },
+  email: { fi: 'Satamayhteisön paikalliset kanavat', en: 'Local harbour community channels' },
+  phone: { fi: 'Paikalliset yhteyshenkilöt ja satamayhteisö', en: 'Local contact people and the harbour community' }
 };

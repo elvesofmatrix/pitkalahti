@@ -48,20 +48,25 @@ export function PortalTeaser({ locale }: { locale: Locale }) {
     <div className="grid gap-8 border border-[#D9C4A0]/35 bg-[#081524] p-8 text-white md:grid-cols-[1.1fr_0.9fr] md:p-12">
       <div>
         <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[#D9C4A0]">
-          {locale === 'fi' ? 'Tulossa venevajojen omistajille' : 'Coming for boat shed owners'}
+          {locale === 'fi' ? 'Venevajojen omistajille' : 'For boat shed owners'}
         </p>
         <h2 className="serif mt-5 text-4xl md:text-6xl">
           {locale === 'fi' ? 'Rauhallinen digitaalinen koti sataman arkeen.' : 'A calm digital home for harbour life.'}
         </h2>
         <p className="mt-6 max-w-2xl leading-8 text-white/74">
           {locale === 'fi'
-            ? 'Portaali kokoaa tulevaisuudessa omistajaviestinnän, dokumentit, tapahtumat ja satamaan liittyvät ilmoitukset yhteen kutsupohjaiseen palveluun.'
-            : 'The portal will later gather owner communication, documents, events and harbour notices into one invitation-based service.'}
+            ? 'Venevajaportaali on Pitkälahden venevajojen omistajille ja satamayhteisölle suunnattu palvelu. Sen kautta voidaan koota yhteen tiedotteita, yhteisiä pelisääntöjä, asiakirjoja ja sataman arkeen liittyviä ilmoituksia.'
+            : 'The Boat Shed Portal is intended for the owners of the boat sheds in Pitkälahti and the local harbour community. It offers a shared place for notices, guidelines, documents and everyday information related to the harbour.'}
+        </p>
+        <p className="mt-4 max-w-2xl leading-8 text-white/62">
+          {locale === 'fi'
+            ? 'Portaalin käyttö on rajattu yhteisön jäsenille. Venevajojen omistajat ja muut satamayhteisöön kuuluvat saavat kirjautumisohjeet erikseen.'
+            : 'Access is limited to members of the community. Boat shed owners and other members of the harbour community receive login details separately.'}
         </p>
       </div>
-      <form className="grid content-start gap-4 border border-white/12 bg-white/[0.04] p-5" aria-label={locale === 'fi' ? 'Portaalin kirjautumispaikkamerkki' : 'Portal login placeholder'}>
+      <form className="grid content-start gap-4 border border-white/12 bg-white/[0.04] p-5" aria-label={locale === 'fi' ? 'Portaalin kirjautuminen' : 'Portal login'}>
         <p className="text-sm text-white/68">
-          {locale === 'fi' ? 'Kirjautuminen ei ole vielä käytössä.' : 'Login is not active yet.'}
+          {locale === 'fi' ? 'Kirjautuminen on tarkoitettu kutsun saaneille käyttäjille. Julkista rekisteröitymistä ei ole.' : 'Login is intended for invited users. Public registration is not available.'}
         </p>
         <label className="grid gap-2 text-sm">
           {locale === 'fi' ? 'Sähköposti' : 'Email'}
@@ -72,8 +77,13 @@ export function PortalTeaser({ locale }: { locale: Locale }) {
           <input className="min-h-12 border border-white/18 bg-white/8 px-4 text-white" type="password" disabled placeholder="••••••••" />
         </label>
         <button className="min-h-12 border border-[#D9C4A0] text-sm font-semibold uppercase tracking-[0.18em] text-[#D9C4A0]" type="button" disabled>
-          {locale === 'fi' ? 'Kutsulla myöhemmin' : 'Invitation later'}
+          {locale === 'fi' ? 'Kirjaudu' : 'Log in'}
         </button>
+        <p className="text-sm leading-6 text-white/58">
+          {locale === 'fi'
+            ? 'Jos sinulla ei vielä ole tunnuksia, ota yhteyttä sataman tai venevajayhteisön yhteyshenkilöihin.'
+            : 'If you do not yet have login details, please contact the harbour or boat shed community contact person.'}
+        </p>
       </form>
     </div>
   );
@@ -101,15 +111,15 @@ export function ContactPanel({ locale }: { locale: Locale }) {
           </div>
         </dl>
       </div>
-      <form className="grid gap-4 bg-white/55 p-8" aria-label={locale === 'fi' ? 'Yhteydenottolomakkeen käyttöliittymä' : 'Contact form user interface'}>
+      <form className="grid gap-4 bg-white/55 p-8" aria-label={locale === 'fi' ? 'Yhteydenottolomake' : 'Contact form'}>
         <p className="text-sm text-[#8B3A2B]">
-          {locale === 'fi' ? 'Lomake on käyttöliittymäluonnos, eikä lähetä viestejä vielä.' : 'This form is a UI concept and does not send messages yet.'}
+          {locale === 'fi' ? 'Kerro lyhyesti, mitä asia koskee, niin viesti voidaan ohjata oikealle yhteyshenkilölle.' : 'Briefly describe your question so the message can be directed to the right contact person.'}
         </p>
         <input className="min-h-12 border border-[#081524]/18 bg-white px-4" placeholder={locale === 'fi' ? 'Nimi' : 'Name'} />
         <input className="min-h-12 border border-[#081524]/18 bg-white px-4" placeholder={locale === 'fi' ? 'Sähköposti' : 'Email'} />
         <textarea className="min-h-36 border border-[#081524]/18 bg-white p-4" placeholder={locale === 'fi' ? 'Viesti' : 'Message'} />
         <button className="min-h-12 border border-[#081524] px-5 text-sm font-semibold uppercase tracking-[0.18em] text-[#081524]" type="button">
-          {locale === 'fi' ? 'Ei lähetystä v1:ssä' : 'No sending in v1'}
+          {locale === 'fi' ? 'Lähetä viesti' : 'Send message'}
         </button>
       </form>
     </div>
@@ -136,8 +146,8 @@ export function SiteFooter({ locale }: { locale: Locale }) {
           <div>
             <p className="text-sm leading-7 text-white/58">
               {locale === 'fi'
-                ? 'Phase 1 -sivusto käyttää paikallista demosisältöä. Vahvistettavat palvelutiedot lisätään myöhemmin.'
-                : 'The Phase 1 website uses local demo content. Verified service details will be added later.'}
+                ? 'Tämä sivusto esittelee Pitkälahden ja Juojärven ympäristöä rauhallisena pysähdyspaikkana. Käytännön retki- ja yhteystiedot kannattaa tarkistaa paikallisista kanavista ennen matkaa.'
+                : 'This site presents Pitkälahti and Lake Juojärvi as a calm stopping place. For practical trip and contact details, please check local channels before you travel.'}
             </p>
             <div className="mt-8">
               <PrimaryButton href={pathFor(locale, 'contact')}>{cta.contact[locale]}</PrimaryButton>

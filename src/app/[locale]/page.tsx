@@ -41,23 +41,23 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         <div className="grid gap-12 md:grid-cols-[0.9fr_1.1fr]">
           <SectionHeading
             eyebrow={locale === 'fi' ? 'Historiallinen venevajakylä' : 'Historic boat shed village'}
-            title={locale === 'fi' ? 'Puinen rytmi veden reunalla.' : 'A timber rhythm at the water’s edge.'}
+            title={locale === 'fi' ? 'Puinen rytmi veden reunalla.' : 'A wooden rhythm along the water.'}
             intro={
               locale === 'fi'
-                ? 'Pitkälahden identiteetti rakentuu venevajojen, rannan ja yhteisön hiljaisesta läsnäolosta.'
-                : 'Pitkälahti’s identity is built from the quiet presence of boat sheds, shoreline and community.'
+                ? 'Pitkälahden tunnistaa jo kaukaa: lahden molempia rantoja seuraa nauha punaisia ja harmaita venevajoja, jotka tekevät maisemasta omaleimaisen.'
+                : 'You recognise Pitkälahti from a distance: both shores of the bay are lined with red and grey boat sheds that give this lakeside setting its distinctive character.'
             }
           />
           <div className="grid gap-5 text-lg leading-8 text-[#3B4B58]">
             <p>
               {locale === 'fi'
-                ? 'Tämä ensimmäinen sivustoversio kertoo paikan tunnelmaa ennen kaikkea tarinana: järven, työn, vapaa-ajan ja kesäisen kohtaamisen paikkana.'
-                : 'This first website version presents the atmosphere primarily as a story: a place of lake, work, leisure and summer encounters.'}
+                ? 'Venevajat ovat syntyneet järven, työn ja vapaa-ajan yhteiseen tarinaan. Niiden ympärille on vuosikymmenten aikana kasvanut paikka, jossa souturetket, kalareissut, kesäillat ja yhteiset muistot ovat kulkeneet rinnakkain.'
+                : 'The sheds belong to a longer story of lake life, work and free time. Over the decades, the area has gathered memories of rowing trips, fishing days, summer evenings and a close connection to the water.'}
             </p>
             <p>
               {locale === 'fi'
-                ? 'Tarkat palvelutiedot lisätään vasta vahvistettuina, jotta sivusto pysyy luotettavana ja paikalle uskollisena.'
-                : 'Specific service details will only be added once verified, keeping the site reliable and true to the place.'}
+                ? 'Tänään Pitkälahti on rauhallinen pysähdyspaikka. Vajarivin ohi voi kulkea hitaasti, katsella veden heijastuksia ja aistia, miten vahvasti Juojärvi kuuluu paikalliseen elämään.'
+                : 'Today Pitkälahti is a calm stopping point. Walk along the line of sheds, watch the reflections on the lake and take in the quiet rhythm of Lake Juojärvi.'}
             </p>
           </div>
         </div>
@@ -65,11 +65,11 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       <ContentSection tone="mist">
         <SectionHeading
           eyebrow="Lake Juojärvi"
-          title={locale === 'fi' ? 'Kirkas vesi, saaret ja hidas kesävalo.' : 'Clear water, islands and slow summer light.'}
+          title={locale === 'fi' ? 'Kirkas vesi, saaret ja hidas kesävalo.' : 'Clear water, islands and long summer light.'}
           intro={
             locale === 'fi'
-              ? 'Juojärvi antaa Pitkälahdelle maiseman: veneilyn, melonnan, kalastuksen ja retkien suunnan.'
-              : 'Juojärvi gives Pitkälahti its landscape: boating, paddling, fishing and the direction for excursions.'
+              ? 'Juojärvi on laaja järvimaisema, jossa selät, saaret ja suojaisat lahdet jättävät tilaa hengittää. Pitkälahdesta avautuu näkymä vesille, joilla veneily, melonta, kalastus ja rauhalliset retket kulkevat luontevasti hitaamman matkanteon rinnalla.'
+              : 'Lake Juojärvi is a broad lakeland landscape of open waters, islands and sheltered bays. From Pitkälahti, the view opens towards a place where boating, paddling, fishing and quiet outings belong naturally to a slower way of travelling.'
           }
         />
         <div className="mt-12">
@@ -80,11 +80,11 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         <div className="grid gap-12 lg:grid-cols-[0.75fr_1.25fr]">
           <SectionHeading
             eyebrow={locale === 'fi' ? 'Satamaelämä' : 'Harbour life'}
-            title={locale === 'fi' ? 'Käytännöllinen, mutta ei kiireinen.' : 'Practical, but never hurried.'}
+            title={locale === 'fi' ? 'Käytännöllinen, rauhallinen pysähdys.' : 'A practical, unhurried stop.'}
             intro={
               locale === 'fi'
-                ? 'Satamasivu kokoaa vierailijan kannalta olennaisen yleiskuvan ilman vahvistamattomia palvelulupauksia.'
-                : 'The harbour page gathers a visitor-oriented overview without unverified service promises.'
+                ? 'Pitkälahti ei pyri olemaan kiireinen palvelusatama. Se on rauhallinen lahti, jossa voi pysähtyä hetkeksi, katsella venevajoja ja antaa järvimaiseman tehdä tehtävänsä. Satama-alue on yhteinen ympäristö paikallisille, venevajojen omistajille ja vierailijoille.'
+                : 'Pitkälahti is not trying to be a busy service marina. It is a quiet bay where you can pause for a while, take in the boat sheds and let the lake set the pace. The harbour area is a shared environment for local residents, boat shed owners and visitors.'
             }
           />
           <HarbourStatus locale={locale} />
@@ -93,9 +93,13 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       <ContentSection id={anchors.events} tone="mist">
         <div className="mb-12 flex flex-col justify-between gap-6 md:flex-row md:items-end">
           <SectionHeading
-            eyebrow={locale === 'fi' ? 'Tuleva ohjelma' : 'Upcoming programme'}
-            title={locale === 'fi' ? 'Kesäisiä syitä tulla rantaan.' : 'Summer reasons to arrive by the water.'}
-            intro={locale === 'fi' ? 'Demosisältö näyttää tulevan tapahtumarakenteen.' : 'Demo content shows the future event structure.'}
+            eyebrow={locale === 'fi' ? 'Ohjelmaa ja yhteisiä hetkiä' : 'Events and shared moments'}
+            title={locale === 'fi' ? 'Kesäisiä syitä tulla rantaan.' : 'Summer reasons to come to the shore.'}
+            intro={
+              locale === 'fi'
+                ? 'Pitkälahden parhaat hetket syntyvät usein pienestä: iltakävelystä vajarivin ohi, yhteisestä melontalenkistä, satamapäivästä tai paikallisen historian äärelle pysähtymisestä. Ajankohtaiset tapahtumat ja yhteiset hetket kootaan tänne, kun ohjelmaa järjestetään Pitkälahden, paikallisten toimijoiden ja satamayhteisön voimin.'
+                : 'The best moments in Pitkälahti are often simple: an evening walk among the boat sheds, a shared paddle, a harbour day or a pause to listen to local stories. Current events and shared moments are gathered here whenever they are organised by Pitkälahti, local partners and the harbour community.'
+            }
           />
           <PrimaryButton href={pathFor(locale, 'events')}>{cta.allEvents[locale]}</PrimaryButton>
         </div>
@@ -114,15 +118,18 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         <div className="grid gap-12 md:grid-cols-[1fr_1fr]">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[#D9C4A0]">
-              {locale === 'fi' ? 'Video / drone story' : 'Video / drone story'}
+              {locale === 'fi' ? 'Video ja dronekuva' : 'Video and drone'}
             </p>
             <h2 className="serif mt-5 text-5xl leading-tight text-white">
-              {locale === 'fi' ? 'Liikkuvan kuvan paikka on varattu järven valolle.' : 'A moving-image space reserved for lake light.'}
+              {locale === 'fi' ? 'Järven valo liikkeessä.' : 'Lake light in motion.'}
             </h2>
+            <p className="mt-6 max-w-xl leading-8 text-white/72">
+              {locale === 'fi'
+                ? 'Liikkuva kuva näyttää Pitkälahden lahden, venevajat ja Juojärven valon tavalla, jossa veden pinta, metsän reuna ja sataman rauhallinen rytmi pääsevät oikeuksiinsa.'
+                : 'Moving images show the bay of Pitkälahti, the boat sheds and the changing light on Lake Juojärvi, giving room to the water, the forest edge and the harbour’s calm rhythm.'}
+            </p>
           </div>
-          <div className="min-h-[320px] border border-white/14 bg-white/[0.04] p-6">
-            <p className="text-sm uppercase tracking-[0.24em] text-white/50">16:9 placeholder</p>
-          </div>
+          <div className="min-h-[320px] border border-white/14 bg-white/[0.04]" />
         </div>
       </ContentSection>
       <ContentSection id={anchors.gallery}>
@@ -130,6 +137,11 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           <SectionHeading
             eyebrow={locale === 'fi' ? 'Galleria' : 'Gallery'}
             title={locale === 'fi' ? 'Vuodenajat, vesi ja vajat.' : 'Seasons, water and sheds.'}
+            intro={
+              locale === 'fi'
+                ? 'Kuvagalleria kokoaa yhteen Pitkälahden ja Juojärven eri hetkiä: kevään kirkastuvaa valoa, kesäiltojen tyyntä vettä, syksyn kuparisia rantoja ja talven hiljaisuutta.'
+                : 'The gallery brings together different moments from Pitkälahti and Lake Juojärvi: bright spring light, calm summer evenings, copper tones in autumn and the stillness of winter.'
+            }
           />
         </div>
         <GalleryMosaic locale={locale} />
@@ -157,7 +169,7 @@ function BoatersFinalSection({ locale, id }: { locale: Locale; id: string }) {
           <p className="mt-6 text-lg leading-8 text-white/74">{page.intro[locale]}</p>
           <p className="mt-6 max-w-2xl leading-8 text-white/62">{page.sections[0].body[locale]}</p>
           <div className="mt-9">
-            <PrimaryButton href={pathFor(locale, 'boaters')}>{locale === 'fi' ? 'Lue veneilijälle' : 'Read for boaters'}</PrimaryButton>
+            <PrimaryButton href={pathFor(locale, 'boaters')}>{locale === 'fi' ? 'Lue veneilijän vinkit' : 'Read boating tips'}</PrimaryButton>
           </div>
         </div>
         <div className="grid gap-4 md:grid-cols-3 lg:grid-cols-1">

@@ -73,7 +73,7 @@ function PageSpecific({ keyName, locale }: { keyName: PageKey; locale: Locale })
             {['1918', 'Venevajat', 'Juojärvi'].map((item) => (
               <figure key={item} className="min-h-64 bg-[#B3B0A8] p-5">
                 <figcaption className="text-sm uppercase tracking-[0.2em] text-[#081524]/70">
-                  {locale === 'fi' ? `Arkistokuvan paikkamerkki: ${item}` : `Archival image placeholder: ${item}`}
+                  {locale === 'fi' ? `Pitkälahden historia: ${item}` : `Pitkälahti history: ${item}`}
                 </figcaption>
               </figure>
             ))}

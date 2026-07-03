@@ -14,109 +14,109 @@ export type PageContent = {
 export const pages: Record<PageKey, PageContent> = {
   history: {
     eyebrow: { fi: 'Historia', en: 'History' },
-    title: { fi: 'Pitkälahden rantaan kerrostunut aika.', en: 'Time layered on the Pitkälahti shoreline.' },
+    title: { fi: 'Työn, vesireittien ja vapaa-ajan yhteys.', en: 'Where work, waterways and free time meet.' },
     intro: {
-      fi: 'Pitkälahti kertoo tarinaa venevajakylästä, Juojärvestä ja Outokummun työn historiasta.',
-      en: 'Pitkälahti tells a story of the boat shed village, Lake Juojärvi and Outokumpu’s working history.'
+      fi: 'Pitkälahden historia kerrostuu venevajojen, Juojärven, Outokummun työn ja kesäisen järvielämän ympärille.',
+      en: 'Pitkälahti’s history is layered around the boat sheds, Lake Juojärvi, Outokumpu’s working life and summers by the water.'
     },
     sections: [
       {
-        title: { fi: 'Kapearaiteisen rautatien muisto', en: 'Memory of the narrow-gauge railway' },
+        title: { fi: 'Kapearaiteinen yhteys', en: 'A narrow-gauge connection' },
         body: {
-          fi: 'Vuoden 1918 kapearaiteinen yhteys Outokummun kaivoksen ja Pitkälahden välillä on yksi paikan vahvoista historiallisista teemoista. Se liittää sataman laajempaan kertomukseen työstä, liikkumisesta ja vesireiteistä.',
-          en: 'The 1918 narrow-gauge connection between the Outokumpu mine and Pitkälahti is one of the place’s strong historical themes. It connects the harbour to a broader story of work, movement and waterways.'
+          fi: 'Pitkälahden ja Outokummun historiaan kuuluu yhteys, jossa työ, vesireitit ja satama kulkivat rinnakkain. Rautatie ja järvi muodostivat aikanaan osan alueen arjen ja liikkumisen kokonaisuutta.',
+          en: 'The history of Pitkälahti and Outokumpu includes a connection where work, waterways and the harbour moved side by side. The railway and the lake once formed part of the area’s everyday life and movement.'
         }
       },
       {
-        title: { fi: 'Venevajakylä', en: 'The boat shed village' },
+        title: { fi: 'Venevajakylän kerrokset', en: 'Layers of the boat shed village' },
         body: {
-          fi: 'Venevajat muodostavat maisemaan tunnistettavan rytmin. Ne eivät ole lavaste vaan paikallisen järvielämän, omistajuuden ja kesäisen käytön jälki.',
-          en: 'The boat sheds create a recognisable rhythm in the landscape. They are not scenery but a trace of local lake life, ownership and summer use.'
+          fi: 'Venevajat kertovat järven käytöstä, yhteisöstä ja kesäisestä rytmistä. Vuosikymmenten aikana niiden ympärille on muodostunut maisema, jossa käytännöllisyys ja vapaa-aika elävät rinnakkain.',
+          en: 'The boat sheds tell a story of lake use, community and the rhythm of summer. Over the decades, the area has grown into a landscape where practicality and free time meet.'
         }
       }
     ]
   },
   harbour: {
     eyebrow: { fi: 'Satama', en: 'Harbour' },
-    title: { fi: 'Rauhallinen lähtöpiste Juojärvelle.', en: 'A calm starting point for Lake Juojärvi.' },
+    title: { fi: 'Käytännöllinen, rauhallinen pysähdys.', en: 'A practical, unhurried stop.' },
     intro: {
-      fi: 'Satamasivu kokoaa yleiskuvan vierailijalle. Yksityiskohtaiset palvelutiedot lisätään vasta vahvistettuina.',
-      en: 'The harbour page gathers a visitor overview. Detailed service information will be added only once verified.'
+      fi: 'Pitkälahti on rauhallinen lahti, jossa voi pysähtyä hetkeksi, katsella venevajoja ja antaa järvimaiseman tehdä tehtävänsä.',
+      en: 'Pitkälahti is a quiet bay where you can pause for a while, take in the boat sheds and let the lake set the pace.'
     },
     sections: [
       {
-        title: { fi: 'Vierailijan näkökulma', en: 'Visitor perspective' },
+        title: { fi: 'Satamaelämä', en: 'Harbour life' },
         body: {
-          fi: 'Pitkälahti esitellään tässä vaiheessa maisemana, saapumiskokemuksena ja paikallisena satamaympäristönä. Sivusto ei vielä lupaa tarkkoja palveluita, paikkamääriä tai aukioloaikoja.',
-          en: 'Pitkälahti is presented at this stage as a landscape, arrival experience and local harbour setting. The site does not yet promise exact services, berth counts or opening hours.'
+          fi: 'Satama-alue on yhteinen ympäristö paikallisille, venevajojen omistajille ja vierailijoille. Ennen matkaa on hyvä tarkistaa ajantasaiset käytännön tiedot paikallisista lähteistä, mutta paikan perusajatus pysyy samana: Pitkälahti tarjoaa tilaa hengähtää veden äärellä.',
+          en: 'The harbour area is a shared environment for local residents, boat shed owners and visitors. Before travelling, it is wise to check current practical information from local sources, but the core idea remains the same: Pitkälahti offers space to slow down by the water.'
         }
       }
     ]
   },
   events: {
     eyebrow: { fi: 'Tapahtumat', en: 'Events' },
-    title: { fi: 'Ohjelmaa veden äärellä.', en: 'Programme by the water.' },
+    title: { fi: 'Kesäisiä syitä tulla rantaan.', en: 'Summer reasons to come to the shore.' },
     intro: {
-      fi: 'Tapahtumasivu näyttää tulevan ohjelmarakenteen demosisällöllä.',
-      en: 'The events page shows the future programme structure with demo content.'
+      fi: 'Pitkälahden parhaat hetket syntyvät usein pienestä: iltakävelystä vajarivin ohi, yhteisestä melontalenkistä, satamapäivästä tai paikallisen historian äärelle pysähtymisestä.',
+      en: 'The best moments in Pitkälahti are often simple: an evening walk among the boat sheds, a shared paddle, a harbour day or a pause to listen to local stories.'
     },
     sections: [
       {
-        title: { fi: 'Kesän rytmi', en: 'Summer rhythm' },
+        title: { fi: 'Ohjelmaa ja yhteisiä hetkiä', en: 'Events and shared moments' },
         body: {
-          fi: 'Tuleva ohjelma voi rakentua kävelyistä, paikallishistoriasta, järviretkistä ja yhteisöllisistä kesähetkistä.',
-          en: 'The future programme can be shaped by walks, local history, lake outings and shared summer moments.'
+          fi: 'Ajankohtaiset tapahtumat ja yhteiset hetket kootaan tänne, kun ohjelmaa järjestetään Pitkälahden, paikallisten toimijoiden ja satamayhteisön voimin.',
+          en: 'Current events and shared moments are gathered here whenever they are organised by Pitkälahti, local partners and the harbour community.'
         }
       }
     ]
   },
   gallery: {
     eyebrow: { fi: 'Galleria', en: 'Gallery' },
-    title: { fi: 'Kuvallinen tunnelma ennen varsinaista kuva-arkistoa.', en: 'Visual atmosphere before the real image archive.' },
+    title: { fi: 'Vuodenajat, vesi ja vajat.', en: 'Seasons, water and sheds.' },
     intro: {
-      fi: 'Galleria käyttää v1:ssä paikallisia visuaalisia paikkamerkkejä ja kategorioita.',
-      en: 'In v1 the gallery uses local visual placeholders and categories.'
+      fi: 'Kuvagalleria kokoaa yhteen Pitkälahden ja Juojärven eri hetkiä: kevään kirkastuvaa valoa, kesäiltojen tyyntä vettä, syksyn kuparisia rantoja ja talven hiljaisuutta.',
+      en: 'The gallery brings together different moments from Pitkälahti and Lake Juojärvi: bright spring light, calm summer evenings, copper tones in autumn and the stillness of winter.'
     },
     sections: [
       {
-        title: { fi: 'Kategorioita kuva-arkistolle', en: 'Categories for the image archive' },
+        title: { fi: 'Pitkälahden kuvia', en: 'Images of Pitkälahti' },
         body: {
-          fi: 'Kesä, syksy, talvi, järvielämä ja venevajat muodostavat tulevan kuvaston rungon.',
-          en: 'Summer, autumn, winter, lake life and boat sheds form the structure for the future image collection.'
+          fi: 'Venevajat, kirkas järvivesi, vuodenaikojen valo ja hiljaiset selät muodostavat kuvaston rungon.',
+          en: 'Boat sheds, clear lake water, seasonal light and quiet open stretches form the heart of the visual collection.'
         }
       }
     ]
   },
   boaters: {
     eyebrow: { fi: 'Veneilijälle', en: 'For boaters' },
-    title: { fi: 'Järvelle lähdetään olosuhteet edellä.', en: 'The lake is approached through conditions first.' },
+    title: { fi: 'Järvelle lähdetään olosuhteet edellä.', en: 'On this lake, conditions come first.' },
     intro: {
-      fi: 'Veneilijän sivu painottaa vastuullista retkisuunnittelua, paikallisia olosuhteita ja Juojärven saarimaisemaa.',
-      en: 'The boaters page emphasizes responsible planning, local conditions and Lake Juojärvi’s island landscape.'
+      fi: 'Juojärvi on maisemaltaan avoin, vaihteleva ja monin paikoin tarkkaa navigointia vaativa järvi. Se palkitsee rauhallisella etenemisellä, huolellisella suunnittelulla ja omiin taitoihin sopivilla reiteillä.',
+      en: 'Lake Juojärvi is open, varied and in many places a lake that requires careful navigation. It rewards calm progress, thoughtful planning and routes that suit your own skills.'
     },
     sections: [
       {
-        title: { fi: 'Turvallinen retki', en: 'A safe outing' },
+        title: { fi: 'Retki Pitkälahden ja Juojärven vesille', en: 'A trip to Pitkälahti and Lake Juojärvi' },
         body: {
-          fi: 'Tarkista sää, varusteet ja oma kokemus. Tämä sivusto ei korvaa ajantasaisia viranomais- tai karttapalveluita.',
-          en: 'Check weather, equipment and your own experience. This website does not replace current official or map services.'
+          fi: 'Tämä sivu tarjoaa yleiskuvan veneilijälle, joka suunnittelee retkeä Pitkälahden ja Juojärven vesille omalla veneellä, kanootilla tai kajakilla. Tarkista aina sää, varusteet, kartat ja voimassa olevat määräykset ennen vesille lähtöä. Tämä sivusto ei korvaa virallisia navigointi- tai viranomaispalveluja.',
+          en: 'This page gives a general overview for boaters planning a trip to Pitkälahti and the waters of Juojärvi with their own boat, canoe or kayak. Always check the weather, equipment, charts and current regulations before going on the water. This site does not replace official navigation or authority services.'
         }
       }
     ]
   },
   things: {
     eyebrow: { fi: 'Tekemistä Juojärvellä', en: 'Things to do on Juojärvi' },
-    title: { fi: 'Veneilyä, melontaa, kalastusta ja vuodenaikojen valoa.', en: 'Boating, paddling, fishing and seasonal light.' },
+    title: { fi: 'Kirkas vesi, saaret ja hidas kesävalo.', en: 'Clear water, islands and long summer light.' },
     intro: {
-      fi: 'Pitkälahti toimii luontevana lähtöpisteenä rauhalliseen järvikokemukseen.',
-      en: 'Pitkälahti works as a natural starting point for a calm lake experience.'
+      fi: 'Juojärvi on laaja järvimaisema, jossa selät, saaret ja suojaisat lahdet jättävät tilaa hengittää.',
+      en: 'Lake Juojärvi is a broad lakeland landscape of open waters, islands and sheltered bays.'
     },
     sections: [
       {
-        title: { fi: 'Perheille ja retkeilijöille', en: 'For families and explorers' },
+        title: { fi: 'Rauhallinen järvipäivä', en: 'A calm day on the lake' },
         body: {
-          fi: 'Järviluonto, rannan historia ja kesäiset tapahtumat luovat kevyitä syitä viipyä pidempään.',
-          en: 'Lake nature, shoreline history and summer events create gentle reasons to stay longer.'
+          fi: 'Pitkälahdesta avautuu näkymä vesille, joilla veneily, melonta, kalastus ja rauhalliset retket kulkevat luontevasti hitaamman matkanteon rinnalla.',
+          en: 'From Pitkälahti, the view opens towards a place where boating, paddling, fishing and quiet outings belong naturally to a slower way of travelling.'
         }
       }
     ]
@@ -125,32 +125,32 @@ export const pages: Record<PageKey, PageContent> = {
     eyebrow: { fi: 'Yhteystiedot', en: 'Contact' },
     title: { fi: 'Yhteys Pitkälahteen.', en: 'Get in touch with Pitkälahti.' },
     intro: {
-      fi: 'Yhteystiedot merkitään tässä vaiheessa paikkamerkeiksi, kunnes ne vahvistetaan.',
-      en: 'Contact details are marked as placeholders until verified.'
+      fi: 'Pitkälahti on yhteinen ympäristö paikallisille, venevajojen omistajille ja vierailijoille.',
+      en: 'Pitkälahti is a shared environment for local residents, boat shed owners and visitors.'
     },
     sections: [
       {
-        title: { fi: 'Lomake käyttöliittymänä', en: 'Form as interface' },
+        title: { fi: 'Kysy paikallisista käytännöistä', en: 'Ask about local practices' },
         body: {
-          fi: 'Yhteydenottolomake on v1:ssä visuaalinen käyttöliittymä, ei vielä lähettävä taustapalvelu.',
-          en: 'The contact form in v1 is a visual user interface, not yet a sending backend service.'
+          fi: 'Kun tarvitset ajantasaista tietoa vierailusta, tapahtumista tai satamayhteisöstä, tarkista tieto paikallisista lähteistä ja yhteyshenkilöiltä.',
+          en: 'When you need current information about visiting, events or the harbour community, check local sources and contact people.'
         }
       }
     ]
   },
   portal: {
-    eyebrow: { fi: 'Venevajaportaali', en: 'Boat shed portal' },
-    title: { fi: 'Tuleva palvelu venevajojen omistajille.', en: 'A future service for boat shed owners.' },
+    eyebrow: { fi: 'Venevajaportaali', en: 'Boat Shed Portal' },
+    title: { fi: 'Rauhallinen digitaalinen koti sataman arkeen.', en: 'A calm digital home for harbour life.' },
     intro: {
-      fi: 'Portaali on tässä vaiheessa premium-esittely ja kirjautumisen paikkamerkki.',
-      en: 'The portal is currently a premium introduction and login placeholder.'
+      fi: 'Venevajaportaali on Pitkälahden venevajojen omistajille ja satamayhteisölle suunnattu palvelu.',
+      en: 'The Boat Shed Portal is intended for the owners of the boat sheds in Pitkälahti and the local harbour community.'
     },
     sections: [
       {
-        title: { fi: 'Kutsupohjainen tulevaisuus', en: 'Invitation-based future' },
+        title: { fi: 'Venevajojen omistajille', en: 'For boat shed owners' },
         body: {
-          fi: 'Tuleva portaali voi koota omistajaviestinnän, dokumentit, satamatiedotteet ja tapahtumat yhteen rauhalliseen palveluun.',
-          en: 'The future portal may gather owner communication, documents, harbour notices and events into one calm service.'
+          fi: 'Sen kautta voidaan koota yhteen tiedotteita, yhteisiä pelisääntöjä, asiakirjoja ja sataman arkeen liittyviä ilmoituksia. Portaalin käyttö on rajattu yhteisön jäsenille. Venevajojen omistajat ja muut satamayhteisöön kuuluvat saavat kirjautumisohjeet erikseen.',
+          en: 'It offers a shared place for notices, guidelines, documents and everyday information related to the harbour. Access is limited to members of the community. Boat shed owners and other members of the harbour community receive login details separately.'
         }
       }
     ]

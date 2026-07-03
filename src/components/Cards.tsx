@@ -1,0 +1,118 @@
+import type { Locale } from '@/lib/i18n';
+import { events, galleryItems, harbourServices, routes, timeline } from '@/data/content';
+import { SectionHeading } from './SectionHeading';
+
+export function EventCard({ event, locale }: { event: (typeof events)[number]; locale: Locale }) {
+  const date = new Intl.DateTimeFormat(locale === 'fi' ? 'fi-FI' : 'en-GB', { month: 'long', day: 'numeric', year: 'numeric' }).format(new Date(event.date));
+
+  return (
+    <article className="border border-[#0B1E33]/12 bg-white/55 p-6">
+      <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#B65F32]">{event.category[locale]}</p>
+      <h3 className="serif mt-5 text-3xl text-[#081524]">{event.title[locale]}</h3>
+      <time className="mt-3 block text-sm font-semibold text-[#4D5A63]" dateTime={event.date}>
+        {date}
+      </time>
+      <p className="mt-5 leading-7 text-[#3B4B58]">{event.description[locale]}</p>
+      {event.note ? <p className="mt-5 text-sm text-[#8B3A2B]">{event.note[locale]}</p> : null}
+    </article>
+  );
+}
+
+export function EventGrid({ locale }: { locale: Locale }) {
+  return (
+    <div className="grid gap-5 md:grid-cols-3">
+      {events.map((event) => (
+        <EventCard key={event.title.fi} event={event} locale={locale} />
+      ))}
+    </div>
+  );
+}
+
+export function GalleryMosaic({ locale }: { locale: Locale }) {
+  return (
+    <div className="grid auto-rows-[180px] gap-4 md:grid-cols-5">
+      {galleryItems.map((item, index) => (
+        <figure
+          key={item.title.fi}
+          className={`${item.tone} relative overflow-hidden p-5 text-white ${index === 0 ? 'md:col-span-2 md:row-span-2' : ''} ${index === 1 ? 'md:col-span-2' : ''}`}
+        >
+          <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.16),transparent_52%)]" />
+          <figcaption className="relative flex h-full flex-col justify-end">
+            <span className="text-xs font-semibold uppercase tracking-[0.22em] text-white/66">{item.category[locale]}</span>
+            <span className="serif mt-2 text-3xl">{item.title[locale]}</span>
+          </figcaption>
+        </figure>
+      ))}
+    </div>
+  );
+}
+
+export function Timeline({ locale }: { locale: Locale }) {
+  return (
+    <div className="grid gap-5">
+      {timeline.map((item) => (
+        <article key={item.year} className="grid gap-4 border-t border-[#081524]/15 py-7 md:grid-cols-[180px_1fr]">
+          <p className="serif text-4xl text-[#8B3A2B]">{item.year}</p>
+          <div>
+            <h3 className="serif text-3xl text-[#081524]">{item.title[locale]}</h3>
+            <p className="mt-3 max-w-3xl leading-8 text-[#3B4B58]">{item.body[locale]}</p>
+          </div>
+        </article>
+      ))}
+    </div>
+  );
+}
+
+export function HarbourStatus({ locale }: { locale: Locale }) {
+  return (
+    <div className="grid gap-5 md:grid-cols-3">
+      {harbourServices.map((service) => (
+        <article key={service.title.fi} className="border border-[#D9C4A0]/60 bg-[#081524] p-6 text-white">
+          <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[#D9C4A0]">{service.status[locale]}</p>
+          <h3 className="serif mt-5 text-3xl">{service.title[locale]}</h3>
+          <p className="mt-4 leading-7 text-white/72">{service.description[locale]}</p>
+        </article>
+      ))}
+    </div>
+  );
+}
+
+export function RouteCard({ route, locale }: { route: (typeof routes)[number]; locale: Locale }) {
+  return (
+    <article className="border-l-2 border-[#B1763B] bg-white/45 p-6">
+      <h3 className="serif text-3xl text-[#081524]">{route.title[locale]}</h3>
+      <p className="mt-4 leading-7 text-[#3B4B58]">{route.body[locale]}</p>
+    </article>
+  );
+}
+
+export function RouteGrid({ locale }: { locale: Locale }) {
+  return (
+    <div className="grid gap-5 md:grid-cols-3">
+      {routes.map((route) => (
+        <RouteCard key={route.title.fi} route={route} locale={locale} />
+      ))}
+    </div>
+  );
+}
+
+export function MapSection({ locale }: { locale: Locale }) {
+  return (
+    <section id="saapuminen" className="grid gap-8 bg-[#E3E4E6] p-6 md:grid-cols-[0.9fr_1.1fr] md:p-10">
+      <SectionHeading
+        eyebrow={locale === 'fi' ? 'Saapuminen' : 'Arrival'}
+        title={locale === 'fi' ? 'Outokummun järvimaisemaan.' : 'Into Outokumpu’s lake landscape.'}
+        intro={
+          locale === 'fi'
+            ? 'Karttanäkymä on tässä vaiheessa avaimeton havainnekuva. Tarkemmat ajo- ja satamaohjeet lisätään vahvistettuina.'
+            : 'The map view is currently a keyless illustration. Verified driving and harbour instructions will be added later.'
+        }
+      />
+      <div className="relative min-h-[320px] overflow-hidden bg-[#0B1E33]">
+        <div className="absolute inset-0 opacity-80 [background:radial-gradient(circle_at_35%_35%,#D9C4A0_0_2px,transparent_3px),linear-gradient(135deg,#0B1E33,#081524)] [background-size:38px_38px,auto]" />
+        <div className="absolute left-1/2 top-1/2 h-32 w-32 -translate-x-1/2 -translate-y-1/2 border border-[#D9C4A0]/70" />
+        <p className="absolute bottom-6 left-6 max-w-xs text-sm uppercase tracking-[0.24em] text-[#D9C4A0]">Pitkälahti · Lake Juojärvi</p>
+      </div>
+    </section>
+  );
+}

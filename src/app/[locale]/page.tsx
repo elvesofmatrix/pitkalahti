@@ -24,11 +24,18 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
   const { locale: value } = await params;
   if (!isLocale(value)) notFound();
   const locale = value as Locale;
+  const anchors = {
+    history: locale === 'fi' ? 'historia' : 'history',
+    harbour: locale === 'fi' ? 'satama' : 'harbour',
+    events: locale === 'fi' ? 'tapahtumat' : 'events',
+    gallery: locale === 'fi' ? 'galleria' : 'gallery',
+    boaters: locale === 'fi' ? 'veneilijalle' : 'for-boaters'
+  };
 
   return (
     <main>
       <HeroSection locale={locale} />
-      <ContentSection id="venevajakylä">
+      <ContentSection id={anchors.history}>
         <div className="grid gap-12 md:grid-cols-[0.9fr_1.1fr]">
           <SectionHeading
             eyebrow={locale === 'fi' ? 'Historiallinen venevajakylä' : 'Historic boat shed village'}
@@ -53,7 +60,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           </div>
         </div>
       </ContentSection>
-      <ContentSection id="juojärvi" tone="mist">
+      <ContentSection id={anchors.boaters} tone="mist">
         <SectionHeading
           eyebrow="Lake Juojärvi"
           title={locale === 'fi' ? 'Kirkas vesi, saaret ja hidas kesävalo.' : 'Clear water, islands and slow summer light.'}
@@ -67,7 +74,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           <RouteGrid locale={locale} />
         </div>
       </ContentSection>
-      <ContentSection id="satamaelämä">
+      <ContentSection id={anchors.harbour}>
         <div className="grid gap-12 lg:grid-cols-[0.75fr_1.25fr]">
           <SectionHeading
             eyebrow={locale === 'fi' ? 'Satamaelämä' : 'Harbour life'}
@@ -81,7 +88,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           <HarbourStatus locale={locale} />
         </div>
       </ContentSection>
-      <ContentSection id="tapahtumat" tone="mist">
+      <ContentSection id={anchors.events} tone="mist">
         <div className="mb-12 flex flex-col justify-between gap-6 md:flex-row md:items-end">
           <SectionHeading
             eyebrow={locale === 'fi' ? 'Tuleva ohjelma' : 'Upcoming programme'}
@@ -116,7 +123,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           </div>
         </div>
       </ContentSection>
-      <ContentSection>
+      <ContentSection id={anchors.gallery}>
         <div className="mb-12">
           <SectionHeading
             eyebrow={locale === 'fi' ? 'Galleria' : 'Gallery'}

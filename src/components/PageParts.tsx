@@ -37,7 +37,7 @@ export function ContentSection({
         : 'paper-texture bg-[#F5F1E9] text-[#081524]';
 
   return (
-    <section id={id} className={`${className} px-5 py-20 lg:px-8 lg:py-28`}>
+    <section id={id} className={`${className} scroll-mt-28 px-5 py-20 md:scroll-mt-32 lg:px-8 lg:py-28`}>
       <div className="mx-auto max-w-7xl">{children}</div>
     </section>
   );

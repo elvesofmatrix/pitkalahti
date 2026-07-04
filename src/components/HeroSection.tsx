@@ -51,7 +51,7 @@ export function HeroSection({ locale }: { locale: Locale }) {
         fill
         priority
         sizes="100vw"
-        className="absolute inset-x-0 top-0 !h-[104.5%] object-cover object-[42%_top] will-change-transform md:object-top lg:!h-[109%]"
+        className="absolute inset-x-0 top-0 !h-[104.5%] object-cover object-[50%_7%] will-change-transform md:object-top lg:!h-[109%]"
         style={{ transform: 'translate3d(0, calc(var(--hero-image-scroll) * var(--hero-image-shift) * -1), 0)' }}
       />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_24%_78%,rgba(8,21,36,0.72)_0%,rgba(8,21,36,0.44)_32%,rgba(8,21,36,0.12)_52%,transparent_72%)]" />
